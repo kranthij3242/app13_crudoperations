@@ -1,0 +1,21 @@
+<div *ngIf="!exist">student record not matched</div>
+<mat-card *ngIf="exist">
+    <form #editstudentfrm="ngForm" (ngSubmit)="updatestudent(editstudentfrm)">
+        <mat-form-field>
+            <input type="text" matInput ngModel name="stuname"  #studentname="ngModel" [(ngModel)]="studentmatcheddata.name" required placeholder="Student Name...">
+            <mat-error *ngIf="studentname.invalid">Name should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" matInput ngModel name="stuemail"  #studentemail="ngModel" [(ngModel)]="studentmatcheddata.email" required placeholder="Student Email...">
+            <mat-error *ngIf="studentemail.invalid">Email should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" matInput ngModel name="stuphone"  #studentphone="ngModel" [(ngModel)]="studentmatcheddata.phone" required placeholder="Student Phone Number...">
+            <mat-error *ngIf="studentphone.invalid">Phone should not be empty</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Update Student</button>
+    </form>
+</mat-card>
+

@@ -1,0 +1,13 @@
+<mat-accordion multi="true">
+    <mat-expansion-panel *ngFor="let student of students">
+    <mat-expansion-panel-header >
+        <mat-panel-title>
+                {{student.name}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-action-row>
+        <button mat-button color="accent" [routerLink]="['/editstudent',student.id]">Edit</button>
+        <button mat-button color="primary" (click)="deletestudent(student.id)">Delete</button>
+    </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>

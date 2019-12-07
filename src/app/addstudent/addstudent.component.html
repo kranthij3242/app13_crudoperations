@@ -1,0 +1,20 @@
+<div *ngIf="yesadded">{{successmsg}}</div>
+<mat-card>
+    <form #studentfrm="ngForm" (ngSubmit)="addstudent(studentfrm)">
+        <mat-form-field>
+            <input type="text" matInput ngModel name="stuname"  #studentname="ngModel" required placeholder="Student Name...">
+            <mat-error *ngIf="studentname.invalid">Name should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" matInput ngModel name="stuemail"  #studentemail="ngModel" required placeholder="Student Email...">
+            <mat-error *ngIf="studentemail.invalid">Email should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" matInput ngModel name="stuphone"  #studentphone="ngModel" required placeholder="Student Phone Number...">
+            <mat-error *ngIf="studentphone.invalid">Phone should not be empty</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Add Student</button>
+    </form>
+</mat-card>
